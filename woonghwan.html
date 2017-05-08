@@ -3,9 +3,47 @@
 <head>
 	<meta charset="UTF-8">
 	<title>woonghwan_page.html</title>
+	<link rel="stylesheet" href="css/animate.min.css">
+	<style>
+		body{
+			background-image: url(images/star_main.jpg);
+			background-repeat: no-repeat;
+			background-size: 100%;
+		}
+		h1{
+			/*color: #fff;
+			text-align: center;*/
+			margin-top: 500px;
+		}
+		p{
+			/*color: #fff;
+			text-align: center;*/
+			margin-top: 100px;
+			font-size: 20px;
+		}
+		.text{
+			color: #fff;
+			text-align: center;
+			animation-duration: 3s;
+		}
+	</style>
 </head>
 <body>
-	<h3>5시반에 스타 빠무 시작합니다.</h3>
-	<p>UDP로 모이세요.</p>
+	<h1 class="text">5시반에 스타 빠무 시작합니다.</h1>
+	<p class="text">UDP로 모이세요.</p>
+	<script src="js/jquery-3.2.0.js"></script>
+	<script>
+		
+		$.fn.extend({
+   		animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+    	    	});
+    			}
+		});
+
+		$(".text").animateCss("zoomInDown");
+	</script>
 </body>
 </html>
